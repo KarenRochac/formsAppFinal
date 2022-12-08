@@ -1,0 +1,94 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-button color="primary" routerLink="/tabs/tab1">
+        <ion-icon slot="icon-only" name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" >
+      <ion-button color="danger"  class="b" routerLink="/login">
+        Login
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="header">
+    <h1>Registro</h1>
+
+  </div>
+  <form [formGroup]="formCadastro" id="form" >
+    <div class="c">
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input formControlName="nome"></ion-input>
+        <ng-container *ngFor="let erro of mensagens.nome">
+          <span class="msg-erro"
+          *ngIf="formCadastro.get('nome').hasError(erro.tipo)
+           && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)">
+            {{erro.mensagem}}
+          </span>
+        </ng-container>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">sobrenone</ion-label>
+        <ion-input formControlName="sobrenome"></ion-input>
+        <ng-container *ngFor="let erro of mensagens.sobrenome">
+          <span class="msg-erro"
+          *ngIf="formCadastro.get('sobrenome').hasError(erro.tipo)
+           && (formCadastro.get('sobrenome').dirty || formCadastro.get('sobrenome').touched)">
+            {{erro.mensagem}}
+          </span>
+        </ng-container>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">CPF</ion-label>
+        <ion-input formControlName="cpf"></ion-input>
+        <ng-container *ngFor="let erro of mensagens.cpf">
+          <span class="msg-erro"
+          *ngIf="formCadastro.get('cpf').hasError(erro.tipo)
+           && (formCadastro.get('cpf').dirty || formCadastro.get('cpf').touched)">
+            {{erro.mensagem}}
+          </span>
+        </ng-container>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.nome">
+        <span class="msg-erro"
+        *ngIf="formCadastro.get('email').hasError(erro.tipo)
+         && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password" formControlName="senha"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.senha">
+        <span class="msg-erro"
+        *ngIf="formCadastro.get('senha').hasError(erro.tipo)
+         && (formCadastro.get('senha').dirty || formCadastro.get('senha').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Confirmar Senha</ion-label>
+      <ion-input type="password" formControlName="confirmarSenha"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.confirmarSenha">
+        <span class="msg-erro"
+        *ngIf="formCadastro.get('confirmarSenha').hasError(erro.tipo)
+         && (formCadastro.get('confirmarSenha').dirty || formCadastro.get('confirmarSenha').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+
+  </div>
+    <ion-button expand="block" shape="round" (click)="salvarCadastro()">Registrar-se</ion-button>
+  </form>
+
+</ion-content>

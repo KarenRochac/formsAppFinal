@@ -1,0 +1,45 @@
+
+.b{
+  text-transform: initial;
+  font-size: 17px;
+}
+ion-content{
+
+
+  #header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  h1{
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 15%;
+  }
+  img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: 8px solid #ffffff;
+  }
+}
+#form{
+  margin-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+}
+ion-item{
+  margin-bottom: 10px;
+}
+.c{
+  margin-bottom: 20px;
+
+}
+.msg-erro{
+  color: #ff0000;
+  font-size: 10px;
+  clear: both;
+  position: relative;
+}

@@ -1,0 +1,34 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-button color="primary" routerLink="/tabs/tab1">
+        <ion-icon slot="icon-only" name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" >
+      <ion-button color="danger"  class="b" routerLink="/registro">
+        Registrar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="header">
+    <h1>Login</h1>
+  </div>
+  <form id="form">
+    <div class="c">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+  </div>
+    <ion-button expand="block" shape="round">Login</ion-button>
+  </form>
+
+</ion-content>

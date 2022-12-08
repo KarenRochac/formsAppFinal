@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-button color="primary" routerLink="/tabs/tab1">
+        <ion-icon slot="icon-only" name="arrow-back" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end" >
+      <ion-button color="danger"  class="b" routerLink="/registro">
+        registrar-se
+      </ion-button>
+    </ion-buttons>
+    <ion-title>produto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="header">
+    <h1>Registro do produto</h1>
+
+  </div>
+  <form [formGroup]="formProduto" id="form" >
+    <div class="c">
+      <ion-item>
+        <ion-label position="floating">Nome</ion-label>
+        <ion-input formControlName="nome"></ion-input>
+        <ng-container *ngFor="let erro of mensagens.nome">
+          <span class="msg-erro"
+          *ngIf="formProduto.get('nome').hasError(erro.tipo)
+           && (formProduto.get('nome').dirty || formProduto.get('nome').touched)">
+            {{erro.mensagem}}
+          </span>
+        </ng-container>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descrição</ion-label>
+        <ion-input ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Validade</ion-label>
+        <ion-input formControlName="validade" ></ion-input>
+        <ng-container *ngFor="let erro of mensagens.validade">
+          <span class="msg-erro"
+          *ngIf="formProduto.get('validade').hasError(erro.tipo)
+           && (formProduto.get('validade').dirty || formProduto.get('validade').touched)">
+            {{erro.mensagem}}
+          </span>
+        </ng-container>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating">Preço</ion-label>
+      <ion-input type="number" formControlName="preco"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.preco">
+        <span class="msg-erro"
+        *ngIf="formProduto.get('preco').hasError(erro.tipo)
+         && (formProduto.get('preco').dirty || formProduto.get('preco').touched)">
+          {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+
+      </div>
+      <ion-button expand="block" shape="round" (click)="salvarCadastro()">Registrar Produtro</ion-button>
+      </form>
+</ion-content>
